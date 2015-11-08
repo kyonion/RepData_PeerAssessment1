@@ -53,6 +53,8 @@ Then the sum of total steps is calculated for each group (= each day). Missing v
 ```{r}
 totalsteps <- summarise_each(data,funs(sum(.,na.rm=TRUE)),steps)
 head(totalsteps)
+```
+```{r fig.width=8}
 hist(totalsteps$steps,breaks=20,xlim=c(0,25000))
 mean <- mean(totalsteps$steps)
 median <- median(totalsteps$steps)
@@ -114,6 +116,8 @@ head(filledindata)
 filledindata <- group_by(filledindata,date)
 totalstepsnew <- summarise_each(filledindata,funs(sum),steps)
 head(totalstepsnew)
+```
+```{r fig.width=8}
 hist(totalstepsnew$steps,breaks=20,xlim=c(0,25000),ylim=c(0,20))
 meannew <- mean(totalstepsnew$steps)
 mediannew <- median(totalstepsnew$steps)
@@ -147,7 +151,7 @@ library(ggplot2)
 
 In the plot below, which compares the 5-minute intervals of weekday and weekend days, some obvious differences in the activity patterns are visible. For example, activities start earlier on weekday days, but appear to be more evenly distributed over the course of the waking hours on weekends.
 
-```{r fig.width=10}
+```{r fig.width=12}
 p <- ggplot(meanweekday,aes(interval/60,steps)) +
   geom_line() +
   facet_grid(day~.) +

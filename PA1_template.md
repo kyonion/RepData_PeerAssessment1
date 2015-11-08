@@ -135,7 +135,7 @@ abline(v=median,col="blue",lwd=2)
 text(12000,10.2,"median",col = "blue")
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 The mean of the total number of steps taken each day is  9354.23, and the median is  10395 steps.
 
@@ -167,7 +167,7 @@ with(intervalmean,plot(interval/60,steps,"l",xlab="hour of day"))
 axis(1,at=1:24)
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 As shown below, interval 515, which starts at 8.35 am, contains the maximum number of steps of any 5-minute interval on average across all the days in the dataset.
 
@@ -291,7 +291,7 @@ abline(v=mediannew,col="blue",lty=2,lwd=2)
 text(13000,20,"median",col="blue")
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
+![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png) 
 
 Both the mean and the median of the total number of steps taken each day have changed for the filled-in dataset. The mean now is  10766.19 instead of 9354.23 steps in the dataset with the missing values. The median has shifted from 10395 to 10766.19 steps. After imputing the missing values the mean and the median are now identical. 10766.19 is also the total number of steps taken in a day for which all values were missing and imputed with the means of the corresponding 5-minute intervals. The 10000 to 11000 steps bin that contains these days now has clearly increased compared with the histogram of the original dataset. Simultaneously, the number of cases in the 0 to 1000 steps bin has decreased significantly. It appears that the NA values were treated as zeros in the original histogram.
 
@@ -336,4 +336,4 @@ p <- ggplot(meanweekday,aes(interval/60,steps)) +
 p
 ```
 
-![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png) 
+![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20-1.png) 
