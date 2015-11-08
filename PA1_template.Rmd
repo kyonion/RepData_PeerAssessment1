@@ -73,7 +73,7 @@ head(intervalmean)
 ```
 
 The relationship between the time intervals and the average number of steps taken is shown in a time series plot.
-```{r fig.width=10}
+```{r fig.width=12}
 with(intervalmean,plot(interval/60,steps,"l",xlab="hour of day"))
 axis(1,at=1:24)
 ```
