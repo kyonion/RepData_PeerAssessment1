@@ -76,8 +76,8 @@ head(intervalmean)
 
 The relationship between the time intervals and the average number of steps taken is shown in a time series plot.
 ```{r fig.width=11}
-with(intervalmean,plot(interval/60,steps,"l",xlab="hour of day"))
-axis(1,at=1:24)
+with(intervalmean,plot(interval/60,steps,"l",xlab="hour of day",xaxt = "n"))
+axis(1,at=0:24)
 ```
 
 As shown below, interval `r intervalmean[which.max(intervalmean$steps),1]`, which starts at `r hour(seconds_to_period(intervalmean[which.max(intervalmean$steps),1]*60))`.`r minute(seconds_to_period(intervalmean[which.max(intervalmean$steps),1]*60))` am, contains the maximum number of steps of any 5-minute interval on average across all the days in the dataset.
